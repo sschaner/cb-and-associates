@@ -2,6 +2,7 @@
 
 $font-stack: 'Poppins', sans-serif;
 $primaryColor: #000;
+$secondaryColor: #fff;
 
 * {
   box-sizing: border-box;
@@ -144,5 +145,75 @@ img {
   .row > .project-container {
     padding-bottom: calc(var(--bs-gutter-x) * 0.5);
     padding-top: calc(var(--bs-gutter-x) * 0.5);
+  }
+}
+
+/***************************
+* contact styles
+***************************/
+.contact {
+  .section-title {
+    grid-area: contactTitle;
+  }
+
+  .container {
+    grid-area: contactForm;
+  }
+
+  form {
+    button {
+      margin-top: 1em;
+    }
+  }
+
+  .associates-title-block-container {
+    position: relative;
+    grid-area: contactTitleBlock;
+
+    @media only screen and (min-width: 750px) {
+      max-width: 400px;
+      margin: auto;
+      margin-top: -13rem;
+      z-index: -1;
+    }
+
+    .contact-info-container {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      color: $secondaryColor;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin-bottom: 10rem;
+        font-weight: 700;
+        font-size: 3em;
+        text-transform: uppercase;
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: $secondaryColor;
+        margin: 0.5rem 0;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 750px) {
+    display: grid;
+    grid-template-areas:
+      'contactTitle contactTitle contactTitle'
+      'contactForm contactForm contactTitleBlock';
+  }
+
+  @media only screen and (min-width: 975px) {
+    grid-template-areas:
+      'contactTitle contactTitle contactTitle contactTitle'
+      'contactForm contactForm  contactForm contactTitleBlock';
   }
 }
